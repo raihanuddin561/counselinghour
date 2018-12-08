@@ -1,0 +1,10 @@
+body {
+  padding-top: 5rem;
+  background-color:silver;
+  <!-- background-image: url("../img/images.png"); -->
+  background-size:cover;
+}
+.starter-template {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}

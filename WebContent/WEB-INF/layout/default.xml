@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="main"
+		template="/WEB-INF/template/default.jsp">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="header"
+			value="/WEB-INF/tiles/header.jsp" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/content.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/tiles/footer.jsp" />
+	</definition>
+	<definition name="login-definition" template="/WEB-INF/template/defaultlogin.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/include/loginheader.jsp"/>
+		<put-attribute name="content" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/include/loginfooter.jsp"/>
+	</definition>
+	<definition name="home" extends="main">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/home.jsp" />
+	</definition>
+	<definition name="error" extends="main">
+		<put-attribute name="title" value="Access Denied" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/error.jsp" />
+	</definition>
+	<definition name="login" extends="login-definition">
+		<put-attribute name="title" value="login" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/login.jsp" />
+	</definition>
+	<definition name="counselinglist" extends="main">
+		<put-attribute name="title" value="Counseling list" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/counselinglist.jsp" />
+	</definition>
+	<definition name="admin" extends="main">
+		<put-attribute name="title" value="Admin page" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/admin.jsp" />
+	</definition>
+	<definition name="addNewUser" extends="login-definition">
+		<put-attribute name="title" value="new account" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/addNewUser.jsp" />
+	</definition>
+	<definition name="admininitializeteacher" extends="main">
+		<put-attribute name="title"
+			value="Admin initialize teacher" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/admininitializeteacher.jsp" />
+	</definition>
+	<definition name="counselinglist" extends="main">
+		<put-attribute name="title" value="Counseling list" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/counselinglist.jsp" />
+	</definition>
+	<definition name="contactlist" extends="main">
+		<put-attribute name="title" value="Contacts" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/contactlist.jsp" />
+	</definition>
+	<!-- To go see message page -->
+	<definition name="seemessage" extends="main">
+		<put-attribute name="title" value="Messages" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/seemessage.jsp" />
+	</definition>
+	<definition name="searchingcounselinglist" extends="main">
+		<put-attribute name="title"
+			value="Student view Counseling list" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/searchingcounselinglist.jsp" />
+	</definition>
+	<definition name="success" extends="main">
+		<put-attribute name="title" value="success" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/success.jsp" />
+	</definition>
+	<definition name="updatecounseling" extends="main">
+		<put-attribute name="title"
+			value="Teacher update counseling" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/updatecounseling.jsp" />
+	</definition>
+	<definition name="adminViewUserList" extends="main">
+		<put-attribute name="title"
+			value="Admin show all user list" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/adminViewUserList.jsp" />
+	</definition>
+	<definition name="messageSent" extends="main">
+		<put-attribute name="title" value="Message" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/messageSent.jsp" />
+	</definition>
+	<definition name="showContactForm" extends="main">
+		<put-attribute name="title" value="Send messaget" />
+		<put-attribute name="content"
+			value="/WEB-INF/tiles/messageform.jsp" />
+	</definition>
+</tiles-definitions>
