@@ -13,10 +13,17 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import com.springweb.service.MailMail;
+import com.springweb.service.UserServiceImpl;
+
 @Component("messageDao")
 public class MessageDao {
 	private NamedParameterJdbcTemplate jdbc;
-
+	@Autowired
+	private MailMail mailMail;
+	@Autowired
+	private UserServiceImpl userServiceImpl;
+	
 	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
@@ -65,6 +72,12 @@ public class MessageDao {
 
 	public boolean create(Message message) {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(message);
+		String from = message.getSender();
+		String to = userServiceImpl.getEmail(message.getReciever());
+		
+		System.out.println("from "+from+" send email to: "+to);
+		mailMail.sendMail(from, to, "CounselingHour", "You have a message from "+from+" please enter counseling hour application");
+		
 		return jdbc.update(
 				"insert into messages(sender,reciever,message) values(:sender,:reciever,:message)",
 				params) == 1;

@@ -1,12 +1,17 @@
 package com.springweb.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -50,7 +55,22 @@ public class UserDaoImpl {
 	      return jdbc.query(sql,BeanPropertyRowMapper.newInstance(User.class));
 	}
 
-	
+	public String getEmail(String reciever) {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("username", reciever);
+		String sql="select email from users where username=:username";
+	      return jdbc.query(sql, param, new ResultSetExtractor<String>() {
+
+			@Override
+			public String extractData(ResultSet rs) throws SQLException, DataAccessException {
+				if(rs.next()) {
+					return rs.getString("email");
+				}
+				return null;
+			}
+		});
+		
+	}
 	
 
 }

@@ -26,6 +26,7 @@
     <param-name>contextConfigLocation</param-name>
     <param-value>
 		classpath:com/springweb/config/dao-context.xml
+		classpath:com/springweb/config/mailContext.xml
 	    classpath:com/springweb/config/security-context.xml
 		</param-value>
   </context-param>

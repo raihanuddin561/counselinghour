@@ -51,4 +51,9 @@ public class UserServiceImpl {
 		// TODO Auto-generated method stub
 		return messageDao.getMessage(username);
 	}
+	
+	public String getEmail(String reciever) {
+		// TODO Auto-generated method stub
+		return userDao.getEmail(reciever);
+	}
 }
