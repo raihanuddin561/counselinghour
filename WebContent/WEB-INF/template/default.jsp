@@ -13,15 +13,16 @@
 <link rel="icon" href="../../../../favicon.ico">
 
 <title><tiles:getAsString name="title"></tiles:getAsString></title>
-
-<!-- Bootstrap core CSS -->
+<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+ --><!-- Bootstrap core CSS -->
+ <link href="<c:url value='/static/bootstrape/fonts/css/all.min.css' />" rel="stylesheet"/>
+ <link href="<c:url value='/static/bootstrape/fonts/css/fontawesome.min.css' />" rel="stylesheet"/>
 <link href="<c:url value='/static/bootstrape/css/bootstrap.min.css' />"
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
 <link href="<c:url value='/static/css/main.css' />" rel="stylesheet" />
-<script src="<c:url value='/static/bootstrape/jquery/Jquery.js' />"></script>
-<script src="<c:url value='/static/bootstrape/js/bootstrap.min.js' />"></script>
+
 </head>
 
 <body>
@@ -34,6 +35,9 @@
 	<div>
 		<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 	</div>
-
+	<script src="<c:url value='/static/bootstrape/fonts/js/all.min.js' />"></script>
+	<script src="<c:url value='/static/bootstrape/fonts/js/fontawesome.min.js' />"></script>
+<script src="<c:url value='/static/bootstrape/jquery/Jquery.js' />"></script>
+<script src="<c:url value='/static/bootstrape/js/bootstrap.min.js' />"></script>
 </body>
 </html>

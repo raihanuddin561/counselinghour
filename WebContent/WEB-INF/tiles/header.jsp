@@ -19,7 +19,7 @@
 			<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
 			<sec:authorize access="hasAnyRole('ROLE_USER','ROLE_TEACHER')">
-		<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/contactlist">Messages</a></li>
+		<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath }/contactlist"><i class="fa fa-envelope"></i> Messages</a></li>
 		
 		
 	</sec:authorize>
